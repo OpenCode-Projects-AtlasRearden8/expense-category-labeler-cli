@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "expense-tagger"
+version = "0.1.0"
+description = "Tag bank-export CSVs into plain-English categories for a personal or tiny-business ledger. Local-first; optional local LLM."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Asdale Dynamics, LLC" }]
+keywords = ["ledger", "budget", "csv", "banking", "ollama", "local-first"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: End Users/Desktop",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Office/Business :: Financial",
+]
+[project.urls]
+Homepage = "https://github.com/dylanasdale/expense-category-labeler-cli"
+
+[project.scripts]
+expense-tagger = "expense_tagger.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["expense_tagger*"]
